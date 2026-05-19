@@ -1,0 +1,19 @@
+public class Test extends java.lang.Object
+{
+    public void <init>()
+    {
+        Test l0;
+        l0 := @this: Test;
+        specialinvoke l0.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+    java.lang.String[] l0;
+
+    l0 := @parameter0: java.lang.String[];
+
+    return;
+    }
+}

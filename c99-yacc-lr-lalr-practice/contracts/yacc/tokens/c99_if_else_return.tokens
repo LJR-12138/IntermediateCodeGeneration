@@ -1,0 +1,19 @@
+# 合法样例：int f() { if (1) return 1; else return 0; }
+INT int 1 1
+IDENTIFIER f 1 5
+'(' ( 1 6
+')' ) 1 7
+'{' { 1 9
+IF if 2 3
+'(' ( 2 6
+CONSTANT 1 2 7
+')' ) 2 8
+RETURN return 2 10
+CONSTANT 1 2 17
+';' ; 2 18
+ELSE else 2 20
+RETURN return 2 25
+CONSTANT 0 2 32
+';' ; 2 33
+'}' } 3 1
+

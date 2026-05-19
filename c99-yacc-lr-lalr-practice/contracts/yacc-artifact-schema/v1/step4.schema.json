@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seu.local/yacc-visualizer/v1/step4.schema.json",
+  "title": "YACC Step4 v1",
+  "type": "object",
+  "required": [
+    "step",
+    "source",
+    "summary",
+    "analysis",
+    "augmented",
+    "prod_index_by_lhs"
+  ],
+  "properties": {
+    "step": {
+      "type": "integer",
+      "const": 4
+    },
+    "source": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "analysis": {
+      "type": "object"
+    },
+    "augmented": {
+      "type": "object",
+      "required": [
+        "production"
+      ],
+      "properties": {
+        "production": {
+          "type": "string"
+        }
+      }
+    },
+    "prod_index_by_lhs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "lhs_id",
+          "lhs_name",
+          "production_ids"
+        ],
+        "properties": {
+          "lhs_id": {
+            "type": "integer"
+          },
+          "lhs_name": {
+            "type": "string"
+          },
+          "production_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  }
+}

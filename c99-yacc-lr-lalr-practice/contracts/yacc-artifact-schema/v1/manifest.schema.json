@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seu.local/yacc-visualizer/v1/manifest.schema.json",
+  "title": "YACC Visualizer Manifest v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "case_id",
+    "generated_at",
+    "source",
+    "steps"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "yacc-visualizer/v1"
+    },
+    "case_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]+$": {
+          "type": "object",
+          "required": [
+            "step",
+            "title",
+            "files"
+          ],
+          "properties": {
+            "step": {
+              "type": "integer"
+            },
+            "title": {
+              "type": "string"
+            },
+            "files": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

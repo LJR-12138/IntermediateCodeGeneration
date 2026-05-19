@@ -1,0 +1,25 @@
+step	state	lookahead_id	lookahead	action	production_id	state_stack	symbol_stack	input_index
+1	0	54	STRUCT	s23	-1	0		0
+2	23	36	IDENTIFIER	r114	114	0 23	STRUCT	1
+3	31	36	IDENTIFIER	s51	-1	0 31	struct_or_union	1
+4	51	139	'{'	s75	-1	0 31 51	struct_or_union IDENTIFIER	2
+5	75	44	INT	s15	-1	0 31 51 75	struct_or_union IDENTIFIER '{'	3
+6	15	36	IDENTIFIER	r99	99	0 31 51 75 15	struct_or_union IDENTIFIER '{' INT	4
+7	76	36	IDENTIFIER	r120	120	0 31 51 75 76	struct_or_union IDENTIFIER '{' type_specifier	4
+8	80	36	IDENTIFIER	s41	-1	0 31 51 75 80	struct_or_union IDENTIFIER '{' specifier_qualifier_list	4
+9	41	157	';'	r143	143	0 31 51 75 80 41	struct_or_union IDENTIFIER '{' specifier_qualifier_list IDENTIFIER	5
+10	46	157	';'	r142	142	0 31 51 75 80 46	struct_or_union IDENTIFIER '{' specifier_qualifier_list direct_declarator	5
+11	169	157	';'	r125	125	0 31 51 75 80 169	struct_or_union IDENTIFIER '{' specifier_qualifier_list declarator	5
+12	168	157	';'	r123	123	0 31 51 75 80 168	struct_or_union IDENTIFIER '{' specifier_qualifier_list struct_declarator	5
+13	167	157	';'	s267	-1	0 31 51 75 80 167	struct_or_union IDENTIFIER '{' specifier_qualifier_list struct_declarator_list	5
+14	267	140	'}'	r118	118	0 31 51 75 80 167 267	struct_or_union IDENTIFIER '{' specifier_qualifier_list struct_declarator_list ';'	6
+15	77	140	'}'	r116	116	0 31 51 75 77	struct_or_union IDENTIFIER '{' struct_declaration	6
+16	162	140	'}'	s265	-1	0 31 51 75 162	struct_or_union IDENTIFIER '{' struct_declaration_list	6
+17	265	157	';'	r111	111	0 31 51 75 162 265	struct_or_union IDENTIFIER '{' struct_declaration_list '}'	7
+18	28	157	';'	r108	108	0 28	struct_or_union_specifier	7
+19	30	157	';'	r81	81	0 30	type_specifier	7
+20	29	157	';'	s49	-1	0 29	declaration_specifiers	7
+21	49	131	$	r77	77	0 29 49	declaration_specifiers ';'	8
+22	33	131	$	r233	233	0 33	declaration	8
+23	26	131	$	r230	230	0 26	external_declaration	8
+24	27	131	$	acc	-1	0 27	translation_unit	8

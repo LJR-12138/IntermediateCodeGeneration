@@ -1,0 +1,10 @@
+# 复杂合法样例：int main() { return 0; }
+INT int 1 1
+IDENTIFIER main 1 5
+'(' ( 1 9
+')' ) 1 10
+'{' { 1 12
+RETURN return 2 3
+CONSTANT 0 2 10
+';' ; 2 11
+'}' } 3 1

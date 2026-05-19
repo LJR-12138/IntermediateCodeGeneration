@@ -1,0 +1,78 @@
+{
+  "schema_version": "yacc-visualizer/v1",
+  "case_id": "c99",
+  "generated_at": "2026-04-04T12:03:31.547171+00:00",
+  "source": "c99.y",
+  "steps": {
+    "1": {
+      "step": 1,
+      "title": "输入文件与词法符号基线",
+      "files": {
+        "data": "step1/data.json"
+      }
+    },
+    "2": {
+      "step": 2,
+      "title": "文法模型初始化与合法性校验",
+      "files": {
+        "data": "step2/data.json"
+      }
+    },
+    "3": {
+      "step": 3,
+      "title": "输入解析结果",
+      "files": {
+        "data": "step3/data.json"
+      }
+    },
+    "4": {
+      "step": 4,
+      "title": "文法预处理与增广",
+      "files": {
+        "data": "step4/data.json"
+      }
+    },
+    "5": {
+      "step": 5,
+      "title": "First 集计算",
+      "files": {
+        "data": "step5/data.json"
+      }
+    },
+    "6": {
+      "step": 6,
+      "title": "LR(1) I0 闭包与 Goto",
+      "files": {
+        "data": "step6/data.json"
+      }
+    },
+    "7": {
+      "step": 7,
+      "title": "LR(1) 规范族与状态转移图",
+      "files": {
+        "data": "step7/data.json"
+      }
+    },
+    "8": {
+      "step": 8,
+      "title": "Action/Goto 分析表与冲突处理",
+      "files": {
+        "data": "step8/data.json"
+      }
+    },
+    "9": {
+      "step": 9,
+      "title": "LR 总控程序执行与解析轨迹",
+      "files": {
+        "data": "step9/data.json"
+      }
+    },
+    "10": {
+      "step": 10,
+      "title": "LR(1) 到 LALR(1) 合并与对比",
+      "files": {
+        "data": "step10/data.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "step": 9,
+  "source": "c99.y",
+  "summary": {
+    "source": "c99.y",
+    "step": "9",
+    "token_source": "contracts/yacc/tokens/c99_decl_int.tokens",
+    "input_tokens": "3",
+    "lr1_parse_accepted": "true",
+    "lr1_parse_total_steps": "8",
+    "lr1_parse_consumed_tokens": "2",
+    "lr1_parse_reductions": "5",
+    "lr1_parse_trace_rows": "8",
+    "lalr_parse_accepted": "true",
+    "lalr_parse_total_steps": "8",
+    "lalr_parse_consumed_tokens": "2",
+    "lalr_parse_reductions": "5",
+    "lalr_parse_trace_rows": "8"
+  },
+  "analysis": {
+    "preprocess_passed": "true",
+    "first_validation_passed": "true",
+    "lr1_step6_validation_passed": "true",
+    "lr1_step7_validation_passed": "true",
+    "lr1_step8_validation_passed": "true",
+    "lr1_parse_accepted": "true",
+    "lr1_parse_error": "false",
+    "lr1_parse_total_steps": "8",
+    "lr1_parse_reductions": "5",
+    "lalr_parse_accepted": "true",
+    "lalr_parse_error": "false",
+    "lalr_parse_total_steps": "8",
+    "lalr_parse_reductions": "5",
+    "productions_with_actions": "0",
+    "unused_terminals_count": "0",
+    "unreachable_nonterminals_count": "0"
+  },
+  "parse_runtime": {
+    "input_tokens": [
+      {
+        "index": 0,
+        "symbol_id": 44,
+        "symbol_name": "INT",
+        "lexeme": "int",
+        "line": 1,
+        "column": 1
+      },
+      {
+        "index": 1,
+        "symbol_id": 157,
+        "symbol_name": "';'",
+        "lexeme": ";",
+        "line": 1,
+        "column": 4
+      },
+      {
+        "index": 2,
+        "symbol_id": 131,
+        "symbol_name": "$",
+        "lexeme": "$",
+        "line": 0,
+        "column": 0
+      }
+    ],
+    "lr1_trace_rows": [
+      {
+        "step": 1,
+        "state": 0,
+        "lookahead_id": 44,
+        "lookahead": "INT",
+        "action": "s15",
+        "production_id": -1,
+        "state_stack": "0",
+        "symbol_stack": "",
+        "input_index": 0
+      },
+      {
+        "step": 2,
+        "state": 15,
+        "lookahead_id": 157,
+        "lookahead": "';'",
+        "action": "r99",
+        "production_id": 99,
+        "state_stack": "0 15",
+        "symbol_stack": "INT",
+        "input_index": 1
+      },
+      {
+        "step": 3,
+        "state": 30,
+        "lookahead_id": 157,
+        "lookahead": "';'",
+        "action": "r81",
+        "production_id": 81,
+        "state_stack": "0 30",
+        "symbol_stack": "type_specifier",
+        "input_index": 1
+      },
+      {
+        "step": 4,
+        "state": 29,
+        "lookahead_id": 157,
+        "lookahead": "';'",
+        "action": "s49",
+        "production_id": -1,
+        "state_stack": "0 29",
+        "symbol_stack": "declaration_specifiers",
+        "input_index": 1
+      },
+      {
+        "step": 5,
+        "state": 49,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "r77",
+        "production_id": 77,
+        "state_stack": "0 29 49",
+        "symbol_stack": "declaration_specifiers ';'",
+        "input_index": 2
+      },
+      {
+        "step": 6,
+        "state": 33,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "r233",
+        "production_id": 233,
+        "state_stack": "0 33",
+        "symbol_stack": "declaration",
+        "input_index": 2
+      },
+      {
+        "step": 7,
+        "state": 26,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "r230",
+        "production_id": 230,
+        "state_stack": "0 26",
+        "symbol_stack": "external_declaration",
+        "input_index": 2
+      },
+      {
+        "step": 8,
+        "state": 27,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "acc",
+        "production_id": -1,
+        "state_stack": "0 27",
+        "symbol_stack": "translation_unit",
+        "input_index": 2
+      }
+    ],
+    "lalr_trace_rows": [
+      {
+        "step": 1,
+        "state": 0,
+        "lookahead_id": 44,
+        "lookahead": "INT",
+        "action": "s15",
+        "production_id": -1,
+        "state_stack": "0",
+        "symbol_stack": "",
+        "input_index": 0
+      },
+      {
+        "step": 2,
+        "state": 15,
+        "lookahead_id": 157,
+        "lookahead": "';'",
+        "action": "r99",
+        "production_id": 99,
+        "state_stack": "0 15",
+        "symbol_stack": "INT",
+        "input_index": 1
+      },
+      {
+        "step": 3,
+        "state": 30,
+        "lookahead_id": 157,
+        "lookahead": "';'",
+        "action": "r81",
+        "production_id": 81,
+        "state_stack": "0 30",
+        "symbol_stack": "type_specifier",
+        "input_index": 1
+      },
+      {
+        "step": 4,
+        "state": 29,
+        "lookahead_id": 157,
+        "lookahead": "';'",
+        "action": "s49",
+        "production_id": -1,
+        "state_stack": "0 29",
+        "symbol_stack": "declaration_specifiers",
+        "input_index": 1
+      },
+      {
+        "step": 5,
+        "state": 49,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "r77",
+        "production_id": 77,
+        "state_stack": "0 29 49",
+        "symbol_stack": "declaration_specifiers ';'",
+        "input_index": 2
+      },
+      {
+        "step": 6,
+        "state": 33,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "r233",
+        "production_id": 233,
+        "state_stack": "0 33",
+        "symbol_stack": "declaration",
+        "input_index": 2
+      },
+      {
+        "step": 7,
+        "state": 26,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "r230",
+        "production_id": 230,
+        "state_stack": "0 26",
+        "symbol_stack": "external_declaration",
+        "input_index": 2
+      },
+      {
+        "step": 8,
+        "state": 27,
+        "lookahead_id": 131,
+        "lookahead": "$",
+        "action": "acc",
+        "production_id": -1,
+        "state_stack": "0 27",
+        "symbol_stack": "translation_unit",
+        "input_index": 2
+      }
+    ],
+    "lr1_reductions": [
+      {
+        "index": 1,
+        "production_id": 99,
+        "text": "type_specifier -> INT"
+      },
+      {
+        "index": 2,
+        "production_id": 81,
+        "text": "declaration_specifiers -> type_specifier"
+      },
+      {
+        "index": 3,
+        "production_id": 77,
+        "text": "declaration -> declaration_specifiers ';'"
+      },
+      {
+        "index": 4,
+        "production_id": 233,
+        "text": "external_declaration -> declaration"
+      },
+      {
+        "index": 5,
+        "production_id": 230,
+        "text": "translation_unit -> external_declaration"
+      }
+    ],
+    "lalr_reductions": [
+      {
+        "index": 1,
+        "production_id": 99,
+        "text": "type_specifier -> INT"
+      },
+      {
+        "index": 2,
+        "production_id": 81,
+        "text": "declaration_specifiers -> type_specifier"
+      },
+      {
+        "index": 3,
+        "production_id": 77,
+        "text": "declaration -> declaration_specifiers ';'"
+      },
+      {
+        "index": 4,
+        "production_id": 233,
+        "text": "external_declaration -> declaration"
+      },
+      {
+        "index": 5,
+        "production_id": 230,
+        "text": "translation_unit -> external_declaration"
+      }
+    ],
+    "lr1_error": {
+      "status": "no_error"
+    },
+    "lalr_error": {
+      "status": "no_error"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+1. #114 struct_or_union -> STRUCT
+2. #99 type_specifier -> INT
+3. #120 specifier_qualifier_list -> type_specifier
+4. #143 direct_declarator -> IDENTIFIER
+5. #142 declarator -> direct_declarator
+6. #125 struct_declarator -> declarator
+7. #123 struct_declarator_list -> struct_declarator
+8. #118 struct_declaration -> specifier_qualifier_list struct_declarator_list ';'
+9. #116 struct_declaration_list -> struct_declaration
+10. #111 struct_or_union_specifier -> struct_or_union IDENTIFIER '{' struct_declaration_list '}'
+11. #108 type_specifier -> struct_or_union_specifier
+12. #81 declaration_specifiers -> type_specifier
+13. #77 declaration -> declaration_specifiers ';'
+14. #233 external_declaration -> declaration
+15. #230 translation_unit -> external_declaration

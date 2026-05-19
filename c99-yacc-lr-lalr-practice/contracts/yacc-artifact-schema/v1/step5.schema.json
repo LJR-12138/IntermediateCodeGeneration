@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seu.local/yacc-visualizer/v1/step5.schema.json",
+  "title": "YACC Step5 v1",
+  "type": "object",
+  "required": [
+    "step",
+    "source",
+    "summary",
+    "analysis",
+    "first_sets"
+  ],
+  "properties": {
+    "step": {
+      "type": "integer",
+      "const": 5
+    },
+    "source": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "analysis": {
+      "type": "object"
+    },
+    "first_sets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "symbol_id",
+          "symbol_name",
+          "kind",
+          "first_set"
+        ],
+        "properties": {
+          "symbol_id": {
+            "type": "integer"
+          },
+          "symbol_name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "first_set": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seu.local/yacc-visualizer/v1/step-common.schema.json",
+  "title": "YACC Step Common v1",
+  "type": "object",
+  "required": [
+    "step",
+    "source",
+    "summary",
+    "analysis"
+  ],
+  "properties": {
+    "step": {
+      "type": "integer"
+    },
+    "source": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+1. #99 type_specifier -> INT
+2. #81 declaration_specifiers -> type_specifier

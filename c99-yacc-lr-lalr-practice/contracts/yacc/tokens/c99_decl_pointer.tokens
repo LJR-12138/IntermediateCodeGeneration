@@ -1,0 +1,6 @@
+# 合法样例：int *p;
+INT int 1 1
+'*' * 1 5
+IDENTIFIER p 1 6
+';' ; 1 7
+

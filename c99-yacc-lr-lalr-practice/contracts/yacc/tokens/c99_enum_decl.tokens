@@ -1,0 +1,10 @@
+# 合法样例：enum E { A, B };
+ENUM enum 1 1
+IDENTIFIER E 1 6
+'{' { 1 8
+IDENTIFIER A 1 10
+',' , 1 11
+IDENTIFIER B 1 13
+'}' } 1 15
+';' ; 1 16
+

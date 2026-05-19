@@ -1,0 +1,30 @@
+1. #99 type_specifier -> INT
+2. #81 declaration_specifiers -> type_specifier
+3. #143 direct_declarator -> IDENTIFIER
+4. #155 direct_declarator -> direct_declarator '(' ')'
+5. #142 declarator -> direct_declarator
+6. #2 primary_expression -> CONSTANT
+7. #5 postfix_expression -> primary_expression
+8. #17 unary_expression -> postfix_expression
+9. #29 cast_expression -> unary_expression
+10. #31 multiplicative_expression -> cast_expression
+11. #35 additive_expression -> multiplicative_expression
+12. #38 shift_expression -> additive_expression
+13. #41 relational_expression -> shift_expression
+14. #46 equality_expression -> relational_expression
+15. #49 and_expression -> equality_expression
+16. #51 exclusive_or_expression -> and_expression
+17. #53 inclusive_or_expression -> exclusive_or_expression
+18. #55 logical_and_expression -> inclusive_or_expression
+19. #57 logical_or_expression -> logical_and_expression
+20. #59 conditional_expression -> logical_or_expression
+21. #61 assignment_expression -> conditional_expression
+22. #74 expression -> assignment_expression
+23. #229 jump_statement -> RETURN expression ';'
+24. #204 statement -> jump_statement
+25. #213 block_item -> statement
+26. #210 block_item_list -> block_item
+27. #209 compound_statement -> '{' block_item_list '}'
+28. #235 function_definition -> declaration_specifiers declarator compound_statement
+29. #232 external_declaration -> function_definition
+30. #230 translation_unit -> external_declaration

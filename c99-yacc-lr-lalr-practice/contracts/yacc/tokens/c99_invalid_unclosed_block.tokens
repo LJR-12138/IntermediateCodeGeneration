@@ -1,0 +1,10 @@
+# 非法样例：int f() { return 0;   （缺少右花括号）
+INT int 1 1
+IDENTIFIER f 1 5
+'(' ( 1 6
+')' ) 1 7
+'{' { 1 9
+RETURN return 2 3
+CONSTANT 0 2 10
+';' ; 2 11
+

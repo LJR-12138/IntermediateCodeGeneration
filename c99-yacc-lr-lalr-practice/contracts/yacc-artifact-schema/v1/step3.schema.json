@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seu.local/yacc-visualizer/v1/step3.schema.json",
+  "title": "YACC Step3 v1",
+  "type": "object",
+  "required": [
+    "step",
+    "source",
+    "summary",
+    "analysis",
+    "symbols",
+    "productions"
+  ],
+  "properties": {
+    "step": {
+      "type": "integer",
+      "const": 3
+    },
+    "source": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "analysis": {
+      "type": "object"
+    },
+    "symbols": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "is_literal_char"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "is_literal_char": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "productions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "lhs",
+          "rhs",
+          "line",
+          "action"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "lhs": {
+            "type": "string"
+          },
+          "rhs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "line": {
+            "type": "integer"
+          },
+          "action": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}

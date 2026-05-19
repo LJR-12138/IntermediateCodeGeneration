@@ -1,0 +1,32 @@
+step	state	lookahead_id	lookahead	action	production_id	state_stack	symbol_stack	input_index
+1	0	44	INT	s15	-1	0		0
+2	15	36	IDENTIFIER	r99	99	0 15	INT	1
+3	30	36	IDENTIFIER	r81	81	0 30	type_specifier	1
+4	29	36	IDENTIFIER	s41	-1	0 29	declaration_specifiers	1
+5	41	134	'('	r143	143	0 29 41	declaration_specifiers IDENTIFIER	2
+6	46	134	'('	s69	-1	0 29 46	declaration_specifiers direct_declarator	2
+7	69	135	')'	s153	-1	0 29 46 69	declaration_specifiers direct_declarator '('	3
+8	153	139	'{'	r155	155	0 29 46 69 153	declaration_specifiers direct_declarator '(' ')'	4
+9	46	139	'{'	r142	142	0 29 46	declaration_specifiers direct_declarator	4
+10	45	139	'{'	s67	-1	0 29 45	declaration_specifiers declarator	4
+11	67	0	RETURN	s89	-1	0 29 45 67	declaration_specifiers declarator '{'	5
+12	89	20	CONSTANT	s93	-1	0 29 45 67 89	declaration_specifiers declarator '{' RETURN	6
+13	93	157	';'	r2	2	0 29 45 67 89 93	declaration_specifiers declarator '{' RETURN CONSTANT	7
+14	132	157	';'	r5	5	0 29 45 67 89 132	declaration_specifiers declarator '{' RETURN primary_expression	7
+15	125	157	';'	r17	17	0 29 45 67 89 125	declaration_specifiers declarator '{' RETURN postfix_expression	7
+16	120	157	';'	r29	29	0 29 45 67 89 120	declaration_specifiers declarator '{' RETURN unary_expression	7
+17	126	157	';'	r31	31	0 29 45 67 89 126	declaration_specifiers declarator '{' RETURN cast_expression	7
+18	127	157	';'	r35	35	0 29 45 67 89 127	declaration_specifiers declarator '{' RETURN multiplicative_expression	7
+19	128	157	';'	r38	38	0 29 45 67 89 128	declaration_specifiers declarator '{' RETURN additive_expression	7
+20	115	157	';'	r41	41	0 29 45 67 89 115	declaration_specifiers declarator '{' RETURN shift_expression	7
+21	113	157	';'	r46	46	0 29 45 67 89 113	declaration_specifiers declarator '{' RETURN relational_expression	7
+22	129	157	';'	r49	49	0 29 45 67 89 129	declaration_specifiers declarator '{' RETURN equality_expression	7
+23	112	157	';'	r51	51	0 29 45 67 89 112	declaration_specifiers declarator '{' RETURN and_expression	7
+24	124	157	';'	r53	53	0 29 45 67 89 124	declaration_specifiers declarator '{' RETURN exclusive_or_expression	7
+25	118	157	';'	r55	55	0 29 45 67 89 118	declaration_specifiers declarator '{' RETURN inclusive_or_expression	7
+26	122	157	';'	r57	57	0 29 45 67 89 122	declaration_specifiers declarator '{' RETURN logical_and_expression	7
+27	121	157	';'	r59	59	0 29 45 67 89 121	declaration_specifiers declarator '{' RETURN logical_or_expression	7
+28	117	157	';'	r61	61	0 29 45 67 89 117	declaration_specifiers declarator '{' RETURN conditional_expression	7
+29	116	157	';'	r74	74	0 29 45 67 89 116	declaration_specifiers declarator '{' RETURN assignment_expression	7
+30	178	157	';'	s271	-1	0 29 45 67 89 178	declaration_specifiers declarator '{' RETURN expression	7
+31	271	131	$	error	-1	0 29 45 67 89 178 271	declaration_specifiers declarator '{' RETURN expression ';'	8

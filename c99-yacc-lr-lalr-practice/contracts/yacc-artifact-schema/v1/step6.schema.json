@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seu.local/yacc-visualizer/v1/step6.schema.json",
+  "title": "YACC Step6 v1",
+  "type": "object",
+  "required": [
+    "step",
+    "source",
+    "summary",
+    "analysis",
+    "lr1_i0"
+  ],
+  "properties": {
+    "step": {
+      "type": "integer",
+      "const": 6
+    },
+    "source": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "object"
+    },
+    "analysis": {
+      "type": "object"
+    },
+    "lr1_i0": {
+      "type": "object",
+      "required": [
+        "kernel_items",
+        "closure_items",
+        "goto_edges",
+        "goto_items",
+        "lookahead_notes"
+      ],
+      "properties": {
+        "kernel_items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "closure_items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "goto_edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "symbol_id",
+              "symbol_name",
+              "item_count"
+            ],
+            "properties": {
+              "symbol_id": {
+                "type": "integer"
+              },
+              "symbol_name": {
+                "type": "string"
+              },
+              "item_count": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "goto_items": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "lookahead_notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

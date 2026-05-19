@@ -1,0 +1,10 @@
+1. #99 type_specifier -> INT
+2. #81 declaration_specifiers -> type_specifier
+3. #156 pointer -> '*'
+4. #143 direct_declarator -> IDENTIFIER
+5. #141 declarator -> pointer direct_declarator
+6. #89 init_declarator -> declarator
+7. #87 init_declarator_list -> init_declarator
+8. #78 declaration -> declaration_specifiers init_declarator_list ';'
+9. #233 external_declaration -> declaration
+10. #230 translation_unit -> external_declaration

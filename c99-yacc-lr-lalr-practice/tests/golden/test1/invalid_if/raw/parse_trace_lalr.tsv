@@ -1,0 +1,2 @@
+step	state	lookahead_id	lookahead	action	production_id	state_stack	symbol_stack	input_index
+1	0	40	IF	error	-1	0		0

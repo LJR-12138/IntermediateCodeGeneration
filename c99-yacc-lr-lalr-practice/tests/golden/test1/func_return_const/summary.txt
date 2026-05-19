@@ -1,0 +1,14 @@
+source=c99.y
+step=9
+token_source=contracts/yacc/tokens/c99_func_return_const.tokens
+input_tokens=10
+lr1_parse_accepted=true
+lr1_parse_total_steps=40
+lr1_parse_consumed_tokens=9
+lr1_parse_reductions=30
+lr1_parse_trace_rows=40
+lalr_parse_accepted=true
+lalr_parse_total_steps=40
+lalr_parse_consumed_tokens=9
+lalr_parse_reductions=30
+lalr_parse_trace_rows=40

@@ -1,0 +1,7 @@
+# 合法样例：int a, b;
+INT int 1 1
+IDENTIFIER a 1 5
+',' , 1 6
+IDENTIFIER b 1 8
+';' ; 1 9
+

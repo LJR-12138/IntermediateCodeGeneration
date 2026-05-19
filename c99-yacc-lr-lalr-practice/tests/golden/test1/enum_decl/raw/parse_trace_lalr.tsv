@@ -1,0 +1,20 @@
+step	state	lookahead_id	lookahead	action	production_id	state_stack	symbol_stack	input_index
+1	0	55	ENUM	s24	-1	0		0
+2	24	36	IDENTIFIER	s38	-1	0 24	ENUM	1
+3	38	139	'{'	s56	-1	0 24 38	ENUM IDENTIFIER	2
+4	56	36	IDENTIFIER	s57	-1	0 24 38 56	ENUM IDENTIFIER '{'	3
+5	57	141	','	r135	135	0 24 38 56 57	ENUM IDENTIFIER '{' IDENTIFIER	4
+6	58	141	','	r133	133	0 24 38 56 58	ENUM IDENTIFIER '{' enumerator	4
+7	81	141	','	s172	-1	0 24 38 56 81	ENUM IDENTIFIER '{' enumerator_list	4
+8	172	36	IDENTIFIER	s57	-1	0 24 38 56 81 172	ENUM IDENTIFIER '{' enumerator_list ','	5
+9	57	140	'}'	r135	135	0 24 38 56 81 172 57	ENUM IDENTIFIER '{' enumerator_list ',' IDENTIFIER	6
+10	176	140	'}'	r134	134	0 24 38 56 81 172 176	ENUM IDENTIFIER '{' enumerator_list ',' enumerator	6
+11	81	140	'}'	s171	-1	0 24 38 56 81	ENUM IDENTIFIER '{' enumerator_list	6
+12	171	157	';'	r129	129	0 24 38 56 81 171	ENUM IDENTIFIER '{' enumerator_list '}'	7
+13	35	157	';'	r109	109	0 35	enum_specifier	7
+14	30	157	';'	r81	81	0 30	type_specifier	7
+15	29	157	';'	s49	-1	0 29	declaration_specifiers	7
+16	49	131	$	r77	77	0 29 49	declaration_specifiers ';'	8
+17	33	131	$	r233	233	0 33	declaration	8
+18	26	131	$	r230	230	0 26	external_declaration	8
+19	27	131	$	acc	-1	0 27	translation_unit	8

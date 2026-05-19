@@ -1,0 +1,2053 @@
+{
+  "step": 5,
+  "source": "c99.y",
+  "summary": {
+    "source": "c99.y",
+    "step": "5",
+    "symbols": "158",
+    "terminals": "87",
+    "nonterminals": "68",
+    "productions_with_augmented": "238",
+    "preprocess_passed": "true",
+    "first_converged": "true",
+    "first_iterations": "8",
+    "nullable_nonterminals_count": "0",
+    "first_validation_passed": "true"
+  },
+  "analysis": {
+    "preprocess_passed": "true",
+    "preprocess_errors_count": "0",
+    "preprocess_warnings_count": "0",
+    "first_converged": "true",
+    "first_iterations": "8",
+    "nullable_nonterminals_count": "0",
+    "first_validation_passed": "true",
+    "first_validation_errors_count": "0",
+    "first_validation_warnings_count": "0",
+    "productions_with_actions": "0",
+    "unused_terminals_count": "0",
+    "unreachable_nonterminals_count": "0"
+  },
+  "first_sets": [
+    {
+      "symbol_id": 0,
+      "symbol_name": "RETURN",
+      "kind": "Terminal",
+      "first_set": [
+        "RETURN"
+      ]
+    },
+    {
+      "symbol_id": 1,
+      "symbol_name": "BREAK",
+      "kind": "Terminal",
+      "first_set": [
+        "BREAK"
+      ]
+    },
+    {
+      "symbol_id": 2,
+      "symbol_name": "CONTINUE",
+      "kind": "Terminal",
+      "first_set": [
+        "CONTINUE"
+      ]
+    },
+    {
+      "symbol_id": 3,
+      "symbol_name": "GOTO",
+      "kind": "Terminal",
+      "first_set": [
+        "GOTO"
+      ]
+    },
+    {
+      "symbol_id": 4,
+      "symbol_name": "EXTERN",
+      "kind": "Terminal",
+      "first_set": [
+        "EXTERN"
+      ]
+    },
+    {
+      "symbol_id": 5,
+      "symbol_name": "ADD_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "ADD_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 6,
+      "symbol_name": "AND_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "AND_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 7,
+      "symbol_name": "CHAR",
+      "kind": "Terminal",
+      "first_set": [
+        "CHAR"
+      ]
+    },
+    {
+      "symbol_id": 8,
+      "symbol_name": "BOOL",
+      "kind": "Terminal",
+      "first_set": [
+        "BOOL"
+      ]
+    },
+    {
+      "symbol_id": 9,
+      "symbol_name": "XOR_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "XOR_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 10,
+      "symbol_name": "IMAGINARY",
+      "kind": "Terminal",
+      "first_set": [
+        "IMAGINARY"
+      ]
+    },
+    {
+      "symbol_id": 11,
+      "symbol_name": "STATIC",
+      "kind": "Terminal",
+      "first_set": [
+        "STATIC"
+      ]
+    },
+    {
+      "symbol_id": 12,
+      "symbol_name": "MOD_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "MOD_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 13,
+      "symbol_name": "LEFT_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "LEFT_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 14,
+      "symbol_name": "LEFT_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "LEFT_OP"
+      ]
+    },
+    {
+      "symbol_id": 15,
+      "symbol_name": "OR_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "OR_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 16,
+      "symbol_name": "FLOAT",
+      "kind": "Terminal",
+      "first_set": [
+        "FLOAT"
+      ]
+    },
+    {
+      "symbol_id": 17,
+      "symbol_name": "DIV_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "DIV_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 18,
+      "symbol_name": "OR_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "OR_OP"
+      ]
+    },
+    {
+      "symbol_id": 19,
+      "symbol_name": "SIGNED",
+      "kind": "Terminal",
+      "first_set": [
+        "SIGNED"
+      ]
+    },
+    {
+      "symbol_id": 20,
+      "symbol_name": "CONSTANT",
+      "kind": "Terminal",
+      "first_set": [
+        "CONSTANT"
+      ]
+    },
+    {
+      "symbol_id": 21,
+      "symbol_name": "RIGHT_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "RIGHT_OP"
+      ]
+    },
+    {
+      "symbol_id": 22,
+      "symbol_name": "STRING_LITERAL",
+      "kind": "Terminal",
+      "first_set": [
+        "STRING_LITERAL"
+      ]
+    },
+    {
+      "symbol_id": 23,
+      "symbol_name": "MUL_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "MUL_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 24,
+      "symbol_name": "AND_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "AND_OP"
+      ]
+    },
+    {
+      "symbol_id": 25,
+      "symbol_name": "NE_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "NE_OP"
+      ]
+    },
+    {
+      "symbol_id": 26,
+      "symbol_name": "LE_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "LE_OP"
+      ]
+    },
+    {
+      "symbol_id": 27,
+      "symbol_name": "SIZEOF",
+      "kind": "Terminal",
+      "first_set": [
+        "SIZEOF"
+      ]
+    },
+    {
+      "symbol_id": 28,
+      "symbol_name": "TYPE_NAME",
+      "kind": "Terminal",
+      "first_set": [
+        "TYPE_NAME"
+      ]
+    },
+    {
+      "symbol_id": 29,
+      "symbol_name": "DEC_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "DEC_OP"
+      ]
+    },
+    {
+      "symbol_id": 30,
+      "symbol_name": "ELLIPSIS",
+      "kind": "Terminal",
+      "first_set": [
+        "ELLIPSIS"
+      ]
+    },
+    {
+      "symbol_id": 31,
+      "symbol_name": "CONST",
+      "kind": "Terminal",
+      "first_set": [
+        "CONST"
+      ]
+    },
+    {
+      "symbol_id": 32,
+      "symbol_name": "RIGHT_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "RIGHT_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 33,
+      "symbol_name": "SUB_ASSIGN",
+      "kind": "Terminal",
+      "first_set": [
+        "SUB_ASSIGN"
+      ]
+    },
+    {
+      "symbol_id": 34,
+      "symbol_name": "PTR_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "PTR_OP"
+      ]
+    },
+    {
+      "symbol_id": 35,
+      "symbol_name": "GE_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "GE_OP"
+      ]
+    },
+    {
+      "symbol_id": 36,
+      "symbol_name": "IDENTIFIER",
+      "kind": "Terminal",
+      "first_set": [
+        "IDENTIFIER"
+      ]
+    },
+    {
+      "symbol_id": 37,
+      "symbol_name": "AUTO",
+      "kind": "Terminal",
+      "first_set": [
+        "AUTO"
+      ]
+    },
+    {
+      "symbol_id": 38,
+      "symbol_name": "REGISTER",
+      "kind": "Terminal",
+      "first_set": [
+        "REGISTER"
+      ]
+    },
+    {
+      "symbol_id": 39,
+      "symbol_name": "INLINE",
+      "kind": "Terminal",
+      "first_set": [
+        "INLINE"
+      ]
+    },
+    {
+      "symbol_id": 40,
+      "symbol_name": "IF",
+      "kind": "Terminal",
+      "first_set": [
+        "IF"
+      ]
+    },
+    {
+      "symbol_id": 41,
+      "symbol_name": "VOID",
+      "kind": "Terminal",
+      "first_set": [
+        "VOID"
+      ]
+    },
+    {
+      "symbol_id": 42,
+      "symbol_name": "RESTRICT",
+      "kind": "Terminal",
+      "first_set": [
+        "RESTRICT"
+      ]
+    },
+    {
+      "symbol_id": 43,
+      "symbol_name": "FOR",
+      "kind": "Terminal",
+      "first_set": [
+        "FOR"
+      ]
+    },
+    {
+      "symbol_id": 44,
+      "symbol_name": "INT",
+      "kind": "Terminal",
+      "first_set": [
+        "INT"
+      ]
+    },
+    {
+      "symbol_id": 45,
+      "symbol_name": "LONG",
+      "kind": "Terminal",
+      "first_set": [
+        "LONG"
+      ]
+    },
+    {
+      "symbol_id": 46,
+      "symbol_name": "SHORT",
+      "kind": "Terminal",
+      "first_set": [
+        "SHORT"
+      ]
+    },
+    {
+      "symbol_id": 47,
+      "symbol_name": "DOUBLE",
+      "kind": "Terminal",
+      "first_set": [
+        "DOUBLE"
+      ]
+    },
+    {
+      "symbol_id": 48,
+      "symbol_name": "SWITCH",
+      "kind": "Terminal",
+      "first_set": [
+        "SWITCH"
+      ]
+    },
+    {
+      "symbol_id": 49,
+      "symbol_name": "VOLATILE",
+      "kind": "Terminal",
+      "first_set": [
+        "VOLATILE"
+      ]
+    },
+    {
+      "symbol_id": 50,
+      "symbol_name": "INC_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "INC_OP"
+      ]
+    },
+    {
+      "symbol_id": 51,
+      "symbol_name": "COMPLEX",
+      "kind": "Terminal",
+      "first_set": [
+        "COMPLEX"
+      ]
+    },
+    {
+      "symbol_id": 52,
+      "symbol_name": "TYPEDEF",
+      "kind": "Terminal",
+      "first_set": [
+        "TYPEDEF"
+      ]
+    },
+    {
+      "symbol_id": 53,
+      "symbol_name": "UNSIGNED",
+      "kind": "Terminal",
+      "first_set": [
+        "UNSIGNED"
+      ]
+    },
+    {
+      "symbol_id": 54,
+      "symbol_name": "STRUCT",
+      "kind": "Terminal",
+      "first_set": [
+        "STRUCT"
+      ]
+    },
+    {
+      "symbol_id": 55,
+      "symbol_name": "ENUM",
+      "kind": "Terminal",
+      "first_set": [
+        "ENUM"
+      ]
+    },
+    {
+      "symbol_id": 56,
+      "symbol_name": "ELSE",
+      "kind": "Terminal",
+      "first_set": [
+        "ELSE"
+      ]
+    },
+    {
+      "symbol_id": 57,
+      "symbol_name": "CASE",
+      "kind": "Terminal",
+      "first_set": [
+        "CASE"
+      ]
+    },
+    {
+      "symbol_id": 58,
+      "symbol_name": "DEFAULT",
+      "kind": "Terminal",
+      "first_set": [
+        "DEFAULT"
+      ]
+    },
+    {
+      "symbol_id": 59,
+      "symbol_name": "UNION",
+      "kind": "Terminal",
+      "first_set": [
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 60,
+      "symbol_name": "EQ_OP",
+      "kind": "Terminal",
+      "first_set": [
+        "EQ_OP"
+      ]
+    },
+    {
+      "symbol_id": 61,
+      "symbol_name": "WHILE",
+      "kind": "Terminal",
+      "first_set": [
+        "WHILE"
+      ]
+    },
+    {
+      "symbol_id": 62,
+      "symbol_name": "DO",
+      "kind": "Terminal",
+      "first_set": [
+        "DO"
+      ]
+    },
+    {
+      "symbol_id": 63,
+      "symbol_name": "declaration_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 64,
+      "symbol_name": "external_declaration",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 65,
+      "symbol_name": "translation_unit",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 66,
+      "symbol_name": "iteration_statement",
+      "kind": "Nonterminal",
+      "first_set": [
+        "FOR",
+        "WHILE",
+        "DO"
+      ]
+    },
+    {
+      "symbol_id": 67,
+      "symbol_name": "selection_statement",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IF",
+        "SWITCH"
+      ]
+    },
+    {
+      "symbol_id": 68,
+      "symbol_name": "expression_statement",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'",
+        "';'"
+      ]
+    },
+    {
+      "symbol_id": 69,
+      "symbol_name": "block_item",
+      "kind": "Nonterminal",
+      "first_set": [
+        "RETURN",
+        "BREAK",
+        "CONTINUE",
+        "GOTO",
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "TYPE_NAME",
+        "DEC_OP",
+        "CONST",
+        "IDENTIFIER",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "IF",
+        "VOID",
+        "RESTRICT",
+        "FOR",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "SWITCH",
+        "VOLATILE",
+        "INC_OP",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "CASE",
+        "DEFAULT",
+        "UNION",
+        "WHILE",
+        "DO",
+        "'('",
+        "'{'",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'",
+        "';'"
+      ]
+    },
+    {
+      "symbol_id": 70,
+      "symbol_name": "struct_or_union_specifier",
+      "kind": "Nonterminal",
+      "first_set": [
+        "STRUCT",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 71,
+      "symbol_name": "declaration_specifiers",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 72,
+      "symbol_name": "type_specifier",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "VOID",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "COMPLEX",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 73,
+      "symbol_name": "expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 74,
+      "symbol_name": "struct_or_union",
+      "kind": "Nonterminal",
+      "first_set": [
+        "STRUCT",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 75,
+      "symbol_name": "type_name",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 76,
+      "symbol_name": "statement",
+      "kind": "Nonterminal",
+      "first_set": [
+        "RETURN",
+        "BREAK",
+        "CONTINUE",
+        "GOTO",
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "IF",
+        "FOR",
+        "SWITCH",
+        "INC_OP",
+        "CASE",
+        "DEFAULT",
+        "WHILE",
+        "DO",
+        "'('",
+        "'{'",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'",
+        "';'"
+      ]
+    },
+    {
+      "symbol_id": 77,
+      "symbol_name": "assignment_operator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "ADD_ASSIGN",
+        "AND_ASSIGN",
+        "XOR_ASSIGN",
+        "MOD_ASSIGN",
+        "LEFT_ASSIGN",
+        "OR_ASSIGN",
+        "DIV_ASSIGN",
+        "MUL_ASSIGN",
+        "RIGHT_ASSIGN",
+        "SUB_ASSIGN",
+        "'='"
+      ]
+    },
+    {
+      "symbol_id": 78,
+      "symbol_name": "and_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 79,
+      "symbol_name": "relational_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 80,
+      "symbol_name": "jump_statement",
+      "kind": "Nonterminal",
+      "first_set": [
+        "RETURN",
+        "BREAK",
+        "CONTINUE",
+        "GOTO"
+      ]
+    },
+    {
+      "symbol_id": 81,
+      "symbol_name": "init_declarator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER",
+        "'('",
+        "'*'"
+      ]
+    },
+    {
+      "symbol_id": 82,
+      "symbol_name": "shift_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 83,
+      "symbol_name": "struct_declaration",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 84,
+      "symbol_name": "assignment_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 85,
+      "symbol_name": "conditional_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 86,
+      "symbol_name": "pointer",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'*'"
+      ]
+    },
+    {
+      "symbol_id": 87,
+      "symbol_name": "initializer_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'['",
+        "'.'",
+        "'{'",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 88,
+      "symbol_name": "inclusive_or_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 89,
+      "symbol_name": "type_qualifier",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONST",
+        "RESTRICT",
+        "VOLATILE"
+      ]
+    },
+    {
+      "symbol_id": 90,
+      "symbol_name": "declaration",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 91,
+      "symbol_name": "unary_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 92,
+      "symbol_name": "logical_or_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 93,
+      "symbol_name": "constant_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 94,
+      "symbol_name": "argument_expression_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 95,
+      "symbol_name": "init_declarator_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER",
+        "'('",
+        "'*'"
+      ]
+    },
+    {
+      "symbol_id": 96,
+      "symbol_name": "logical_and_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 97,
+      "symbol_name": "function_definition",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 98,
+      "symbol_name": "enum_specifier",
+      "kind": "Nonterminal",
+      "first_set": [
+        "ENUM"
+      ]
+    },
+    {
+      "symbol_id": 99,
+      "symbol_name": "unary_operator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 100,
+      "symbol_name": "exclusive_or_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 101,
+      "symbol_name": "postfix_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "IDENTIFIER",
+        "'('"
+      ]
+    },
+    {
+      "symbol_id": 102,
+      "symbol_name": "struct_declarator_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER",
+        "'('",
+        "'*'",
+        "':'"
+      ]
+    },
+    {
+      "symbol_id": 103,
+      "symbol_name": "designation",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'['",
+        "'.'"
+      ]
+    },
+    {
+      "symbol_id": 104,
+      "symbol_name": "cast_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 105,
+      "symbol_name": "multiplicative_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 106,
+      "symbol_name": "struct_declarator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER",
+        "'('",
+        "'*'",
+        "':'"
+      ]
+    },
+    {
+      "symbol_id": 107,
+      "symbol_name": "additive_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 108,
+      "symbol_name": "storage_class_specifier",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "STATIC",
+        "AUTO",
+        "REGISTER",
+        "TYPEDEF"
+      ]
+    },
+    {
+      "symbol_id": 109,
+      "symbol_name": "equality_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 110,
+      "symbol_name": "struct_declaration_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 111,
+      "symbol_name": "parameter_type_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 112,
+      "symbol_name": "specifier_qualifier_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 113,
+      "symbol_name": "enumerator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER"
+      ]
+    },
+    {
+      "symbol_id": 114,
+      "symbol_name": "declarator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER",
+        "'('",
+        "'*'"
+      ]
+    },
+    {
+      "symbol_id": 115,
+      "symbol_name": "designator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'['",
+        "'.'"
+      ]
+    },
+    {
+      "symbol_id": 116,
+      "symbol_name": "direct_declarator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER",
+        "'('"
+      ]
+    },
+    {
+      "symbol_id": 117,
+      "symbol_name": "parameter_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 118,
+      "symbol_name": "type_qualifier_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONST",
+        "RESTRICT",
+        "VOLATILE"
+      ]
+    },
+    {
+      "symbol_id": 119,
+      "symbol_name": "function_specifier",
+      "kind": "Nonterminal",
+      "first_set": [
+        "INLINE"
+      ]
+    },
+    {
+      "symbol_id": 120,
+      "symbol_name": "parameter_declaration",
+      "kind": "Nonterminal",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 121,
+      "symbol_name": "identifier_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER"
+      ]
+    },
+    {
+      "symbol_id": 122,
+      "symbol_name": "abstract_declarator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'('",
+        "'['",
+        "'*'"
+      ]
+    },
+    {
+      "symbol_id": 123,
+      "symbol_name": "direct_abstract_declarator",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'('",
+        "'['"
+      ]
+    },
+    {
+      "symbol_id": 124,
+      "symbol_name": "initializer",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "DEC_OP",
+        "IDENTIFIER",
+        "INC_OP",
+        "'('",
+        "'{'",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 125,
+      "symbol_name": "designator_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'['",
+        "'.'"
+      ]
+    },
+    {
+      "symbol_id": 126,
+      "symbol_name": "enumerator_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER"
+      ]
+    },
+    {
+      "symbol_id": 127,
+      "symbol_name": "labeled_statement",
+      "kind": "Nonterminal",
+      "first_set": [
+        "IDENTIFIER",
+        "CASE",
+        "DEFAULT"
+      ]
+    },
+    {
+      "symbol_id": 128,
+      "symbol_name": "block_item_list",
+      "kind": "Nonterminal",
+      "first_set": [
+        "RETURN",
+        "BREAK",
+        "CONTINUE",
+        "GOTO",
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "CONSTANT",
+        "STRING_LITERAL",
+        "SIZEOF",
+        "TYPE_NAME",
+        "DEC_OP",
+        "CONST",
+        "IDENTIFIER",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "IF",
+        "VOID",
+        "RESTRICT",
+        "FOR",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "SWITCH",
+        "VOLATILE",
+        "INC_OP",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "CASE",
+        "DEFAULT",
+        "UNION",
+        "WHILE",
+        "DO",
+        "'('",
+        "'{'",
+        "'&'",
+        "'*'",
+        "'+'",
+        "'-'",
+        "'~'",
+        "'!'",
+        "';'"
+      ]
+    },
+    {
+      "symbol_id": 129,
+      "symbol_name": "primary_expression",
+      "kind": "Nonterminal",
+      "first_set": [
+        "CONSTANT",
+        "STRING_LITERAL",
+        "IDENTIFIER",
+        "'('"
+      ]
+    },
+    {
+      "symbol_id": 130,
+      "symbol_name": "compound_statement",
+      "kind": "Nonterminal",
+      "first_set": [
+        "'{'"
+      ]
+    },
+    {
+      "symbol_id": 131,
+      "symbol_name": "$",
+      "kind": "Special",
+      "first_set": [
+        "$"
+      ]
+    },
+    {
+      "symbol_id": 132,
+      "symbol_name": "epsilon",
+      "kind": "Special",
+      "first_set": [
+        "epsilon"
+      ]
+    },
+    {
+      "symbol_id": 133,
+      "symbol_name": "S'",
+      "kind": "Special",
+      "first_set": [
+        "EXTERN",
+        "CHAR",
+        "BOOL",
+        "IMAGINARY",
+        "STATIC",
+        "FLOAT",
+        "SIGNED",
+        "TYPE_NAME",
+        "CONST",
+        "AUTO",
+        "REGISTER",
+        "INLINE",
+        "VOID",
+        "RESTRICT",
+        "INT",
+        "LONG",
+        "SHORT",
+        "DOUBLE",
+        "VOLATILE",
+        "COMPLEX",
+        "TYPEDEF",
+        "UNSIGNED",
+        "STRUCT",
+        "ENUM",
+        "UNION"
+      ]
+    },
+    {
+      "symbol_id": 134,
+      "symbol_name": "'('",
+      "kind": "Terminal",
+      "first_set": [
+        "'('"
+      ]
+    },
+    {
+      "symbol_id": 135,
+      "symbol_name": "')'",
+      "kind": "Terminal",
+      "first_set": [
+        "')'"
+      ]
+    },
+    {
+      "symbol_id": 136,
+      "symbol_name": "'['",
+      "kind": "Terminal",
+      "first_set": [
+        "'['"
+      ]
+    },
+    {
+      "symbol_id": 137,
+      "symbol_name": "']'",
+      "kind": "Terminal",
+      "first_set": [
+        "']'"
+      ]
+    },
+    {
+      "symbol_id": 138,
+      "symbol_name": "'.'",
+      "kind": "Terminal",
+      "first_set": [
+        "'.'"
+      ]
+    },
+    {
+      "symbol_id": 139,
+      "symbol_name": "'{'",
+      "kind": "Terminal",
+      "first_set": [
+        "'{'"
+      ]
+    },
+    {
+      "symbol_id": 140,
+      "symbol_name": "'}'",
+      "kind": "Terminal",
+      "first_set": [
+        "'}'"
+      ]
+    },
+    {
+      "symbol_id": 141,
+      "symbol_name": "','",
+      "kind": "Terminal",
+      "first_set": [
+        "'",
+        "'"
+      ]
+    },
+    {
+      "symbol_id": 142,
+      "symbol_name": "'&'",
+      "kind": "Terminal",
+      "first_set": [
+        "'&'"
+      ]
+    },
+    {
+      "symbol_id": 143,
+      "symbol_name": "'*'",
+      "kind": "Terminal",
+      "first_set": [
+        "'*'"
+      ]
+    },
+    {
+      "symbol_id": 144,
+      "symbol_name": "'+'",
+      "kind": "Terminal",
+      "first_set": [
+        "'+'"
+      ]
+    },
+    {
+      "symbol_id": 145,
+      "symbol_name": "'-'",
+      "kind": "Terminal",
+      "first_set": [
+        "'-'"
+      ]
+    },
+    {
+      "symbol_id": 146,
+      "symbol_name": "'~'",
+      "kind": "Terminal",
+      "first_set": [
+        "'~'"
+      ]
+    },
+    {
+      "symbol_id": 147,
+      "symbol_name": "'!'",
+      "kind": "Terminal",
+      "first_set": [
+        "'!'"
+      ]
+    },
+    {
+      "symbol_id": 148,
+      "symbol_name": "'/'",
+      "kind": "Terminal",
+      "first_set": [
+        "'/'"
+      ]
+    },
+    {
+      "symbol_id": 149,
+      "symbol_name": "'%'",
+      "kind": "Terminal",
+      "first_set": [
+        "'%'"
+      ]
+    },
+    {
+      "symbol_id": 150,
+      "symbol_name": "'<'",
+      "kind": "Terminal",
+      "first_set": [
+        "'<'"
+      ]
+    },
+    {
+      "symbol_id": 151,
+      "symbol_name": "'>'",
+      "kind": "Terminal",
+      "first_set": [
+        "'>'"
+      ]
+    },
+    {
+      "symbol_id": 152,
+      "symbol_name": "'^'",
+      "kind": "Terminal",
+      "first_set": [
+        "'^'"
+      ]
+    },
+    {
+      "symbol_id": 153,
+      "symbol_name": "'|'",
+      "kind": "Terminal",
+      "first_set": [
+        "'|'"
+      ]
+    },
+    {
+      "symbol_id": 154,
+      "symbol_name": "'?'",
+      "kind": "Terminal",
+      "first_set": [
+        "'?'"
+      ]
+    },
+    {
+      "symbol_id": 155,
+      "symbol_name": "':'",
+      "kind": "Terminal",
+      "first_set": [
+        "':'"
+      ]
+    },
+    {
+      "symbol_id": 156,
+      "symbol_name": "'='",
+      "kind": "Terminal",
+      "first_set": [
+        "'='"
+      ]
+    },
+    {
+      "symbol_id": 157,
+      "symbol_name": "';'",
+      "kind": "Terminal",
+      "first_set": [
+        "';'"
+      ]
+    }
+  ]
+}

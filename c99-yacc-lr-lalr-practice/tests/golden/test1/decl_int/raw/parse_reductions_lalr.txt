@@ -1,0 +1,5 @@
+1. #99 type_specifier -> INT
+2. #81 declaration_specifiers -> type_specifier
+3. #77 declaration -> declaration_specifiers ';'
+4. #233 external_declaration -> declaration
+5. #230 translation_unit -> external_declaration

@@ -1,0 +1,4 @@
+# 非法样例：int a   （缺少分号）
+INT int 1 1
+IDENTIFIER a 1 5
+

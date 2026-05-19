@@ -1,0 +1,10 @@
+# 合法样例：struct S { int a; };
+STRUCT struct 1 1
+IDENTIFIER S 1 8
+'{' { 1 10
+INT int 1 12
+IDENTIFIER a 1 16
+';' ; 1 17
+'}' } 1 19
+';' ; 1 20
+
