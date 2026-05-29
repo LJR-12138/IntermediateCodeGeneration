@@ -1,137 +1,108 @@
 package com.compiler.backend;
 
-import com.compiler.backend.model.ReductionRule;
-import com.compiler.backend.model.TokenRecord;
-import com.compiler.backend.model.TraceEntry;
-import com.compiler.backend.parser.ReductionParser;
-import com.compiler.backend.parser.TokenParser;
-import com.compiler.backend.parser.TraceParser;
-import com.compiler.backend.semantic.TranslationEngine;
+import com.compiler.backend.ast.AstJsonParser;
+import com.compiler.backend.ast.AstPrinter;
+import com.compiler.backend.ast.AstPruner;
+import com.compiler.backend.ast.TranslationUnitNode;
+import com.compiler.backend.config.LanguageConfig;
+import com.compiler.backend.generator.JimpleGenerator;
+import com.compiler.backend.semantic.SymbolTable;
+
+import soot.Scene;
+import soot.SootClass;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 public class Main {
 
-    private static final String BASE_DIR = "c99-yacc-lr-lalr-practice/tests/golden/test1";
-    private static final String TOKENS_BASE = "c99-yacc-lr-lalr-practice/contracts/yacc/tokens";
-
-    private static int passed = 0;
-    private static int failed = 0;
-    private static final List<String> failureDetails = new ArrayList<>();
-
     public static void main(String[] args) {
-        System.out.println("╔══════════════════════════════════════════════════╗");
-        System.out.println("║  C99 Compiler Backend — Java + Soot (Step 5)    ║");
-        System.out.println("╚══════════════════════════════════════════════════╝");
-        System.out.println();
+        // ── Parse CLI arguments ─────────────────────────────────────
+        String jsonPath = null;
+        String outputPath = null;
+        String semConfigPath = null;
 
-        if (args.length == 0) {
-            runAllTests();
-        } else if (args[0].equals("--all")) {
-            runAllTests();
-        } else {
-            String testDir = args[0];
-            if (!testDir.endsWith("/") && !testDir.endsWith("\\")) {
-                testDir += "/";
+        for (int i = 0; i < args.length; i++) {
+            switch (args[i]) {
+                case "--sem-config" -> {
+                    if (i + 1 < args.length) semConfigPath = args[++i];
+                }
+                default -> {
+                    if (jsonPath == null) jsonPath = args[i];
+                    else if (outputPath == null) outputPath = args[i];
+                }
             }
-            String testName = new File(testDir).getParentFile().getName();
-            runSingleTest(testName, testDir);
         }
 
-        System.out.println("═══════════════════════════════════════════════════");
-        System.out.printf("  Total: %d  |  Passed: %d  |  Failed: %d%n",
-                passed + failed, passed, failed);
-        System.out.println("═══════════════════════════════════════════════════");
-
-        if (!failureDetails.isEmpty()) {
-            System.out.println("\n  Failures:");
-            failureDetails.forEach(d -> System.out.println("    - " + d));
+        if (jsonPath == null) {
+            System.out.println("Usage: java -cp <classpath> com.compiler.backend.Main <ast_lalr.json> [output.jimple] [--sem-config path/to/lang.sem.json]");
+            System.exit(1);
         }
-    }
 
-    // ---- Batch: run all 11 test cases ----
-    private static void runAllTests() {
-        String[] tests = {
-            "decl_int", "decl_multi", "decl_pointer",
-            "enum_decl", "struct_decl",
-            "func_param_return", "func_return_const",
-            "if_else_return",
-            "invalid_if", "invalid_missing_semi", "invalid_unclosed_block"
-        };
-
-        for (String testName : tests) {
-            String testDir = BASE_DIR + "/" + testName + "/raw/";
-            runSingleTest(testName, testDir);
+        // ── Load language config (C99 default if no file provided) ──
+        LanguageConfig config;
+        try {
+            if (semConfigPath != null) {
+                System.out.println("[Config] Loading semantic config from: " + semConfigPath);
+                config = LanguageConfig.parse(semConfigPath);
+            } else {
+                config = LanguageConfig.c99Default();
+            }
+            System.out.println("[Config] Language: " + config.getLanguage());
+        } catch (Exception e) {
+            System.err.println("Error loading semantic config: " + e.getMessage());
+            e.printStackTrace();
+            System.exit(1);
+            return;
         }
-    }
 
-    // ---- Single test pipeline ----
-    private static void runSingleTest(String testName, String testDir) {
-        System.out.println("──────────────────────────────────────────");
-        System.out.printf("  Test: %s%n", testName);
-        System.out.println("──────────────────────────────────────────");
+        if (outputPath == null) {
+            File inputFile = new File(jsonPath);
+            outputPath = new File(inputFile.getParentFile(), "output.jimple").getPath();
+        }
 
         try {
-            // 1. Parse trace file
-            TraceParser traceParser = new TraceParser();
-            List<TraceEntry> traces = traceParser.parse(testDir + "parse_trace_lalr.tsv");
-            System.out.printf("  [Parse] Trace: %d entries%n", traces.size());
+            // Step A: Parse AST JSON
+            System.out.println("[Step A] Parsing: " + jsonPath);
+            AstJsonParser.Result result = AstJsonParser.parse(jsonPath);
+            System.out.println("  root=" + result.rootId + ", nodes=" + result.nodes.size());
 
-            // 2. Parse reductions file
-            ReductionParser reductionParser = new ReductionParser();
-            List<ReductionRule> rules = reductionParser.parse(testDir + "parse_reductions_lalr.txt");
-            System.out.printf("  [Parse] Reductions: %d rules%n", rules.size());
+            // Step B: Prune CST → clean OOP AST
+            System.out.println("[Step B] Pruning CST...");
+            AstPruner pruner = new AstPruner(result.nodes, config);
+            TranslationUnitNode astRoot = pruner.prune(result.rootId);
+            System.out.println("  declarations=" + astRoot.declarations.size());
 
-            // Handle empty reductions (parse error in frontend)
-            if (rules.isEmpty()) {
-                System.out.println("  [Skip] No reductions (frontend parse error).");
-                passed++;
-                return;
+            // Step C: Print AST
+            System.out.println("[Step C] AST structure:");
+            AstPrinter.printTree(astRoot);
+            System.out.println();
+
+            // Step D: Create SymbolTable
+            System.out.println("[Step D] Initializing SymbolTable...");
+            SymbolTable symbolTable = new SymbolTable(config);
+
+            // Step E: Generate Jimple
+            System.out.println("[Step E] Generating Jimple...");
+            JimpleGenerator generator = new JimpleGenerator(symbolTable, config);
+            generator.generate(astRoot);
+
+            // Output Jimple
+            System.out.println("[Output] Writing Jimple to: " + outputPath);
+            SootClass sClass = Scene.v().getSootClass(config.getOutputClassName());
+            try (PrintWriter writer = new PrintWriter(
+                    new OutputStreamWriter(new FileOutputStream(outputPath)))) {
+                soot.Printer.v().printTo(sClass, writer);
+                System.out.println("Jimple generated successfully at: " + outputPath);
             }
-
-            // 3. Parse tokens file
-            String tokensFile = TOKENS_BASE + "/c99_" + testName + ".tokens";
-            TokenParser tokenParser = new TokenParser();
-            List<TokenRecord> tokens = tokenParser.parse(tokensFile);
-            System.out.printf("  [Parse] Tokens: %d tokens%n", tokens.size());
-
-            // 4. Run translation engine (includes Jimple generation)
-            TranslationEngine engine = new TranslationEngine(tokens, rules);
-            engine.process(traces);
-
-            System.out.printf("  [SymbolTable] %d symbols: %s%n",
-                    engine.getSymbolTable().getAllSymbols().size(),
-                    engine.getSymbolTable().getAllSymbols());
-
-            // 5. Emit Jimple
-            String jimple = engine.getJimpleOutput();
-
-            // Write to output file
-            String outputPath = testDir.replace("raw/", "") + "output.jimple";
-            try (PrintWriter pw = new PrintWriter(new FileWriter(outputPath))) {
-                pw.print(jimple);
-            }
-            System.out.printf("  [Output] Jimple written to: %s%n", outputPath);
-
-            // Print Jimple to console (compact)
-            System.out.println("  ─── Jimple ───");
-            for (String line : jimple.split("\n")) {
-                System.out.println("  " + line);
-            }
-            System.out.println("  ──────────────");
-
-            System.out.printf("  [Result] PASSED%n%n");
-            passed++;
 
         } catch (Exception e) {
-            System.out.printf("  [Result] FAILED: %s%n%n", e.getMessage());
-            failureDetails.add(testName + ": " + e.getMessage());
-            failed++;
+            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+            System.exit(1);
         }
     }
 }

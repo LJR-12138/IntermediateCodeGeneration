@@ -1,0 +1,57 @@
+{
+  "language": "c99",
+  "productions": {
+    "translationUnit": "translation_unit",
+    "functionDefinition": "function_definition",
+    "declaration": "declaration",
+    "compoundStatement": "compound_statement",
+    "selectionStatement": "selection_statement",
+    "iterationStatement": "iteration_statement",
+    "jumpStatement": "jump_statement",
+    "declarator": "declarator",
+    "directDeclarator": "direct_declarator",
+    "pointer": "pointer",
+    "parameterTypeList": "parameter_type_list",
+    "parameterList": "parameter_list",
+    "parameterDeclaration": "parameter_declaration",
+    "argumentExpressionList": "argument_expression_list",
+    "initDeclaratorList": "init_declarator_list",
+    "initDeclarator": "init_declarator",
+    "initializer": "initializer",
+    "initializerList": "initializer_list",
+    "externalDeclaration": "external_declaration"
+  },
+  "tokens": {
+    "keywords": {
+      "if": "IF",
+      "else": "ELSE",
+      "while": "WHILE",
+      "for": "FOR",
+      "return": "RETURN"
+    },
+    "typeKeywords": [
+      "INT", "CHAR", "VOID", "FLOAT", "DOUBLE",
+      "SHORT", "LONG", "SIGNED", "UNSIGNED"
+    ],
+    "leafTypes": {
+      "identifier": "IDENTIFIER",
+      "integerConstant": "CONSTANT",
+      "stringLiteral": "STRING_LITERAL"
+    },
+    "binaryOperatorTokens": [
+      "EQ_OP", "NE_OP", "LE_OP", "GE_OP",
+      "AND_OP", "OR_OP", "LEFT_OP", "RIGHT_OP"
+    ],
+    "unaryOperatorTokens": ["INC_OP", "DEC_OP"],
+    "postfixOperatorTokens": ["INC_OP", "DEC_OP"]
+  },
+  "typeSystem": {
+    "int":    { "sootType": "IntType",    "aliases": ["signed", "unsigned", "short", "long"] },
+    "char":   { "sootType": "ByteType" },
+    "float":  { "sootType": "FloatType" },
+    "double": { "sootType": "DoubleType" },
+    "void":   { "sootType": "VoidType" }
+  },
+  "builtinFunctions": ["printf", "scanf"],
+  "outputClassName": "GeneratedApp"
+}

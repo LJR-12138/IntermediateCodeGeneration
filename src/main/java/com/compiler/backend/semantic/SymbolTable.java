@@ -1,90 +1,129 @@
 package com.compiler.backend.semantic;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.compiler.backend.config.LanguageConfig;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.Map;
+import soot.Local;
+
+/**
+ * Scope-sensitive symbol table with stack-based nesting.
+ *
+ * Each scope is a Map from C variable name → Soot Local.
+ * {@code lookup()} searches from innermost to outermost scope.
+ * {@code put()} inserts into the current (topmost) scope, rejecting redefinitions.
+ */
 public class SymbolTable {
 
-    public static class Symbol {
-        private String name;
-        private String type;   // C type: "int", "float", "char", etc.
-        private SymbolKind kind;
+    private final LanguageConfig config;
 
-        public enum SymbolKind { VARIABLE, FUNCTION, PARAMETER }
+    private final Deque<Map<String, Local>> scopeStack = new ArrayDeque<>();
 
-        public Symbol(String name, String type, SymbolKind kind) {
-            this.name = name;
-            this.type = type;
-            this.kind = kind;
-        }
-
-        public String getName() { return name; }
-        public String getType() { return type; }
-        public SymbolKind getKind() { return kind; }
-
-        @Override
-        public String toString() {
-            return type + " " + name + " (" + kind + ")";
-        }
-    }
-
-    private final List<Map<String, Symbol>> scopes = new ArrayList<>();
-
-    public SymbolTable() {
+    public SymbolTable(LanguageConfig config) {
+        this.config = config;
         enterScope(); // global scope
     }
 
+    /** Backward-compatible constructor using C99 defaults. */
+    public SymbolTable() {
+        this(LanguageConfig.c99Default());
+    }
+
+    // ─── Scope management ──────────────────────────────────────────
+
+    /** Push a new nested scope (e.g. on entering a compound statement). */
     public void enterScope() {
-        scopes.add(new HashMap<>());
+        scopeStack.push(new HashMap<>());
     }
 
+    /** Pop the current scope (e.g. on leaving a compound statement). */
     public void exitScope() {
-        if (scopes.size() > 1) {
-            scopes.remove(scopes.size() - 1);
+        if (scopeStack.size() > 1) {
+            scopeStack.pop();
         }
     }
 
-    public void insert(String name, String type, Symbol.SymbolKind kind) {
-        currentScope().put(name, new Symbol(name, type, kind));
+    public int currentDepth() {
+        return scopeStack.size();
     }
 
-    public Symbol lookup(String name) {
-        for (int i = scopes.size() - 1; i >= 0; i--) {
-            Symbol sym = scopes.get(i).get(name);
-            if (sym != null) return sym;
+    // ─── Registration ──────────────────────────────────────────────
+
+    /**
+     * Bind varName → local in the current (innermost) scope.
+     * @throws SemanticException if varName is already declared in the current scope.
+     */
+    public void put(String varName, Local local) {
+        Map<String, Local> current = scopeStack.peek();
+        if (current.containsKey(varName)) {
+            throw new SemanticException(
+                "redefinition of '" + varName + "' in the same scope");
         }
-        return null;
+        current.put(varName, local);
     }
 
-    public boolean contains(String name) {
-        return lookup(name) != null;
+    // ─── Lookup ────────────────────────────────────────────────────
+
+    /**
+     * Search for varName from innermost to outermost scope.
+     * @return the corresponding Soot Local
+     * @throws SemanticException if the variable is not declared in any active scope.
+     */
+    public Local lookup(String varName) {
+        for (Map<String, Local> scope : scopeStack) {
+            Local l = scope.get(varName);
+            if (l != null) return l;
+        }
+        throw new SemanticException("undeclared variable '" + varName + "'");
     }
 
-    public int getCurrentDepth() {
-        return scopes.size();
+    /**
+     * Returns true if varName is visible in any active scope.
+     */
+    public boolean contains(String varName) {
+        for (Map<String, Local> scope : scopeStack) {
+            if (scope.containsKey(varName)) return true;
+        }
+        return false;
     }
 
-    public List<Symbol> getAllSymbols() {
-        List<Symbol> all = new ArrayList<>();
-        for (Map<String, Symbol> scope : scopes) {
-            all.addAll(scope.values());
+    /**
+     * Returns true if name is a known C builtin / library function
+     * (e.g. printf, scanf) that should not trigger an undeclared-variable error.
+     */
+    public boolean isBuiltin(String name) {
+        return config.isBuiltin(name);
+    }
+
+    // ─── Introspection ─────────────────────────────────────────────
+
+    /**
+     * Returns all variable names visible across all scopes.
+     * @deprecated Will be removed in Stage 4.
+     */
+    @Deprecated
+    public java.util.List<String> getAllSymbols() {
+        java.util.List<String> all = new java.util.ArrayList<>();
+        for (Map<String, Local> scope : scopeStack) {
+            all.addAll(scope.keySet());
         }
         return all;
-    }
-
-    private Map<String, Symbol> currentScope() {
-        return scopes.get(scopes.size() - 1);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("SymbolTable {\n");
-        for (int i = 0; i < scopes.size(); i++) {
-            sb.append("  Scope ").append(i).append(": ");
-            sb.append(scopes.get(i).values());
+        int depth = 0;
+        // Iterate from outermost (bottom) to innermost (top)
+        var it = scopeStack.descendingIterator();
+        while (it.hasNext()) {
+            Map<String, Local> scope = it.next();
+            sb.append("  scope ").append(depth).append(": ");
+            sb.append(scope.keySet());
             sb.append("\n");
+            depth++;
         }
         sb.append("}");
         return sb.toString();
