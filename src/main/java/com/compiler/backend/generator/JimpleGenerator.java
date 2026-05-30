@@ -24,6 +24,8 @@ public class JimpleGenerator {
     private int tempCounter;
     private boolean mainMethodEnsured;
     private final Map<String, SootMethod> builtinMethodCache = new HashMap<>();
+    /** Top-level (file-scope) C global/static variables mapped to SootFields. */
+    private final Map<String, SootField> globalFields = new HashMap<>();
 
     public JimpleGenerator(SymbolTable symbolTable, LanguageConfig config) {
         this.symbolTable = symbolTable;
@@ -54,12 +56,19 @@ public class JimpleGenerator {
         Scene.v().addClass(sootClass);
         sootClass.setApplicationClass();
 
+        // Phase 1: declare global variables as class-level static fields.
+        // This must happen before generating any function bodies so that
+        // functions can reference globals declared later in the source.
+        for (AstNode decl : root.declarations) {
+            if (decl instanceof VarDeclNode varDecl) {
+                generateGlobalVarDecl(varDecl);
+            }
+        }
+
+        // Phase 2: generate function bodies (which may reference globals).
         for (AstNode decl : root.declarations) {
             if (decl instanceof FunctionDefNode func) {
                 generateFunction(func);
-            } else if (decl instanceof VarDeclNode varDecl) {
-                ensureMainMethod();
-                generateVarDecl(varDecl);
             }
         }
 
@@ -204,6 +213,30 @@ public class JimpleGenerator {
         }
     }
 
+    /**
+     * Creates a class-level static field for a C file-scope (global) variable.
+     * Global variables in C have static storage duration, which maps naturally
+     * to {@code private static} fields in the Jimple class.
+     */
+    private void generateGlobalVarDecl(VarDeclNode vd) {
+        Type mappedType = config.resolveSootType(vd.typeName, vd.pointerDepth);
+        SootField field = new SootField(vd.varName, mappedType,
+                Modifier.PRIVATE | Modifier.STATIC);
+        sootClass.addField(field);
+        globalFields.put(vd.varName, field);
+
+        // Handle initializer if present.
+        // For global variables, the initializer must be a compile-time constant
+        // (C99 §6.7.8); we store it as a Soot tag for later retrieval.
+        if (vd.initExpr instanceof IntLiteralNode lit) {
+            field.addTag(new soot.tagkit.IntegerConstantValueTag(lit.value));
+        } else if (vd.initExpr instanceof StringLiteralNode str) {
+            field.addTag(new soot.tagkit.StringConstantValueTag(str.value));
+        }
+        // For array / expression initializers at global scope, a <clinit> static
+        // initializer block would be needed — not yet implemented.
+    }
+
     // ======== Expression evaluation (returns Value) ========
 
     private Value evaluateExpr(AstNode node) {
@@ -214,7 +247,16 @@ public class JimpleGenerator {
             return StringConstant.v(str.value);
         }
         if (node instanceof IdentifierNode id) {
-            return symbolTable.lookup(id.name);
+            // Local variable / parameter takes precedence (C scoping rules).
+            if (symbolTable.contains(id.name)) {
+                return symbolTable.lookup(id.name);
+            }
+            // Fallback: global / file-scope variable → static field reference.
+            SootField globalField = globalFields.get(id.name);
+            if (globalField != null) {
+                return Jimple.v().newStaticFieldRef(globalField.makeRef());
+            }
+            throw new SemanticException("undeclared variable '" + id.name + "'");
         }
         if (node instanceof BinaryExprNode bin) {
             return evaluateBinaryExpr(bin);
